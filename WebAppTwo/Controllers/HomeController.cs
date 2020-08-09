@@ -11,7 +11,7 @@ namespace WebAppTwo.Controllers
 {
     public class HomeController : Controller
     {
-        public static string CacheConnection = "se010redis.redis.cache.windows.net:6380,password=qD5+CzssviclYJDDwH6YNrqTY+ukfuFskcHb42wfLUA=,ssl=True,abortConnect=False";
+        public static string CacheConnection = "Redis cache connection string";
         public static string connectionstring;
 
         public ActionResult Index()
@@ -23,7 +23,7 @@ namespace WebAppTwo.Controllers
         {
             ViewBag.Message = "Display Users in the DB";
 
-            connectionstring = "Server=tcp:se010server.database.windows.net,1433;Initial Catalog=se010db;Persist Security Info=False;User ID=se010serverlogin;Password=se010Server;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            connectionstring = "Server=tcp:se010server.database.windows.net,1433;Initial Catalog=se010db;Persist Security Info=False;User ID=se010serverlogin;Password=******;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             var conn = new SqlConnection(connectionstring);
             var cmd = new SqlCommand("SELECT COUNT(*) FROM Users", conn);
 
@@ -40,7 +40,7 @@ namespace WebAppTwo.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Working with Redis";
-            connectionstring = "Server=tcp:se010server.database.windows.net,1433;Initial Catalog=se010db;Persist Security Info=False;User ID=se010serverlogin;Password=se010Server;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            connectionstring = "Server=tcp:se010server.database.windows.net,1433;Initial Catalog=se010db;Persist Security Info=False;User ID=se010serverlogin;Password=******;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             var conn = new SqlConnection(connectionstring);
             var cmd = new SqlCommand("SELECT COUNT(*) FROM Users", conn);
 
